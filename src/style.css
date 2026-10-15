@@ -1,0 +1,63 @@
+/**
+ * @file Global stylesheet: Tailwind CSS v4 + daisyUI 5 theme entrypoint.
+ *
+ * Boundary/ownership: `src/style.css`, imported once from `src/main.ts`.
+ * CSS-first configuration — there is deliberately **no** `tailwind.config.js`.
+ *
+ * The `@theme` block re-exports the `Inter` (sans) and `Newsreader` (display)
+ * font stacks for Tailwind's `font-sans`/`font-display` utilities. `:root`
+ * overrides daisyUI's light-theme palette (Editorial Airy: warm paper + ink +
+ * amber) plus a few global rendering defaults.
+ */
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+/** Font stacks surfaced to Tailwind utilities (`font-sans`, `font-display`). */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Newsreader", Georgia, serif;
+}
+
+:root {
+  /* Editorial Airy palette — warm paper + ink + amber */
+  color-scheme: light;
+  --color-base-100: #fbfaf8;
+  --color-base-200: #f4f1ea;
+  --color-base-300: #eae5db;
+  --color-base-content: #1a1917;
+  --color-primary: #b45309;
+  --color-primary-content: #fff7ed;
+  --color-secondary: #6b675e;
+  --color-secondary-content: #fbfaf8;
+  --color-accent: #b45309;
+  --color-accent-content: #fff7ed;
+  --color-neutral: #1a1917;
+  --color-neutral-content: #fbfaf8;
+  --color-error: #c2410c;
+  --color-error-content: #fff7ed;
+  --color-success: #4f7a3c;
+  --color-success-content: #f4fbf0;
+  --color-warning: #b45309;
+  --color-warning-content: #fff7ed;
+  --color-info: #7a6f5e;
+  --color-info-content: #fbfaf8;
+
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-base-100);
+  color: var(--color-base-content);
+}
+
+#app {
+  min-height: 100vh;
+}

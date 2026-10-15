@@ -1,0 +1,47 @@
+# Hermes Template
+
+> Local-first, platform-agnostic Vue 3 + TypeScript application template
+> shipping a **scaffold-only** shell: Zod-authored domain types, a typed API
+> client surface and example service/store stubs, and five layout-only pages.
+> **All code is documented** — every file ships a header + TSDoc on public
+> symbols (see `AGENTS.md` §6).
+
+## Project
+
+- [AGENTS.md](AGENTS.md) — global context boundary & rules (read first)
+- [README.md](README.md) — human-oriented overview & quickstart
+- [llms.txt](llms.txt) — this machine-readable index
+
+## Recursive agent boundaries
+
+Nearest `AGENTS.md` to the file you touch wins on conflict.
+
+- [Source root](src/AGENTS.md)
+- [Types](src/types/AGENTS.md) · [lib](src/lib/AGENTS.md) · [services](src/services/AGENTS.md) · [stores](src/stores/AGENTS.md) · [router](src/router/AGENTS.md) · [pages](src/pages/AGENTS.md)
+- [Components](src/components/AGENTS.md) · [ui (immutable)](src/components/ui/AGENTS.md) · [generated](src/components/generated/AGENTS.md)
+- [Docs](docs/AGENTS.md) · [Requirements](docs/requirements/AGENTS.md) · [Domain](docs/domain/AGENTS.md)
+- [Mockups](mockups/AGENTS.md)
+
+## Docs
+
+- [Domain glossary](docs/domain/glossary.md)
+- [Product requirements (PRD)](docs/requirements/prd.md)
+
+## Source
+
+- [Shared types (Zod-schema authored)](src/types/index.ts)
+- [Generic API client (scaffold)](src/lib/api.ts)
+- [User service (stub)](src/services/userService.ts)
+- [Auth store (scaffold)](src/stores/useAuthStore.ts)
+- [Router (permissive guard scaffold)](src/router/index.ts)
+- [App shell](src/App.vue) · [Pages](src/pages/)
+
+## Configuration
+
+- [Environment template](.env.example) — `VITE_API_BASE_URL` is read at the
+  service layer (`src/services`), not in `src/lib`
+- [Vite config](vite.config.ts) — includes a commented `/api` dev-proxy example
+
+## Assets
+
+- [Design mockups](mockups/)
